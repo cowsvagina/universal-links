@@ -1,4 +1,4 @@
-package association
+package uni_links
 
 import (
 	"testing"
@@ -11,7 +11,7 @@ func TestAssociation_Marshal(t *testing.T) {
 	}{
 		{
 			Association: Association{
-				AppLinks: appLinks{
+				AppLinks: AppLinks{
 					Details: nil,
 				},
 				WebCredentials: nil,
@@ -20,17 +20,17 @@ func TestAssociation_Marshal(t *testing.T) {
 		},
 		{
 			Association: Association{
-				AppLinks: appLinks{
+				AppLinks: AppLinks{
 					Details: nil,
 				},
-				WebCredentials: &webCredentials{Apps: nil},
+				WebCredentials: &WebCredentials{Apps: nil},
 			},
 			Expect: `{"applinks":{"details":[]},"webcredentials":{"apps":[]}}`,
 		},
 		{
 			Association: Association{
-				AppLinks: appLinks{
-					Details: []detail{
+				AppLinks: AppLinks{
+					Details: []Detail{
 						{
 							AppIDs:     nil,
 							Components: nil,
@@ -42,8 +42,8 @@ func TestAssociation_Marshal(t *testing.T) {
 		},
 		{
 			Association: Association{
-				AppLinks: appLinks{
-					Details: []detail{
+				AppLinks: AppLinks{
+					Details: []Detail{
 						{
 							AppIDs: []string{"ABCDE12345.com.example.app"},
 						},
@@ -54,11 +54,11 @@ func TestAssociation_Marshal(t *testing.T) {
 		},
 		{
 			Association: Association{
-				AppLinks: appLinks{
-					Details: []detail{
+				AppLinks: AppLinks{
+					Details: []Detail{
 						{
 							AppIDs: []string{"ABCDE12345.com.example.app", "ABCDE12345.com.example.app2"},
-							Components: []component{
+							Components: []Component{
 								{
 									Fragment: "no_universal_links",
 									Exclude:  true,

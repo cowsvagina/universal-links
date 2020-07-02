@@ -1,4 +1,4 @@
-package association
+package uni_links
 
 import (
 	"testing"
@@ -11,7 +11,7 @@ func TestAssociationIOS12_Marshal(t *testing.T) {
 	}{
 		{
 			Association: AssociationIOS12{
-				AppLinks: appLinksIOS12{
+				AppLinks: AppLinksIOS12{
 					Apps:    nil,
 					Details: nil,
 				},
@@ -21,19 +21,19 @@ func TestAssociationIOS12_Marshal(t *testing.T) {
 		},
 		{
 			Association: AssociationIOS12{
-				AppLinks: appLinksIOS12{
+				AppLinks: AppLinksIOS12{
 					Apps:    nil,
 					Details: nil,
 				},
-				WebCredentials: &webCredentials{Apps: nil},
+				WebCredentials: &WebCredentials{Apps: nil},
 			},
 			Expect: `{"applinks":{"apps":[],"details":[]},"webcredentials":{"apps":[]}}`,
 		},
 		{
 			Association: AssociationIOS12{
-				AppLinks: appLinksIOS12{
+				AppLinks: AppLinksIOS12{
 					Apps: nil,
-					Details: []detailIOS12{
+					Details: []DetailIOS12{
 						{
 							AppID: "ABCDE12345.com.example.app",
 						},
@@ -44,16 +44,16 @@ func TestAssociationIOS12_Marshal(t *testing.T) {
 		},
 		{
 			Association: AssociationIOS12{
-				AppLinks: appLinksIOS12{
+				AppLinks: AppLinksIOS12{
 					Apps: nil,
-					Details: []detailIOS12{
+					Details: []DetailIOS12{
 						{
 							AppID: "ABCDE12345.com.example.app",
 							Paths: []string{"/buy/*", "NOT /help/website/*", "/help/*"},
 						},
 					},
 				},
-				WebCredentials: &webCredentials{
+				WebCredentials: &WebCredentials{
 					Apps: []string{"ABCDE12345.com.example.app"},
 				},
 			},
