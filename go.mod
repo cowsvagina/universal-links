@@ -1,4 +1,4 @@
-module github.com/hsldymq/universal-links
+module github.com/cowsvagina/universal-links
 
 go 1.14
 
