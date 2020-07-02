@@ -1,5 +1,10 @@
 package uni_links
 
+// reference:
+//		https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/enabling_universal_links
+//		https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/handling_universal_links
+//		https://developer.apple.com/documentation/safariservices/supporting_associated_domains_in_your_app
+
 import (
 	jsoniter "github.com/json-iterator/go"
 )
