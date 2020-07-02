@@ -1,1 +1,6 @@
-# universal-links
+# 苹果通用链接库
+
+定义association文件内容的结构体对象.
+
+提供快速启动http server的快捷方法, 允许通过区分域名的方式同时服务多个应用的通用连接.
+
