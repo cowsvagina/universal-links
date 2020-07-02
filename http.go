@@ -55,9 +55,9 @@ func (s *HTTPServer) ServeHTTP(resp http.ResponseWriter, req *http.Request) {
 		resp.WriteHeader(http.StatusNotFound)
 		_, _ = resp.Write([]byte("unsupported domain"))
 	} else {
-		resp.WriteHeader(http.StatusOK)
 		resp.Header().Set("Cache-Control", "no-cache")
 		resp.Header().Set("Content-Type", "application/json; charset=UTF-8")
+		resp.WriteHeader(http.StatusOK)
 		_, _ = resp.Write([]byte(association))
 	}
 
